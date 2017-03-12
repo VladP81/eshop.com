@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var Model_User $user
+ */
+$user = $view->getParam('user');
+?>
+<h1> Привет Админ : <?php echo $user->name; ?></h1>
+<h2>Теперь ты можешь исправить тут все))</h2>
+
+
+<p><a href="/admin/product">Продукты</a></p>
+<p><a href="/admin/user">Пользователи</a></p>
+<p><a href="/admin/user">Заказы</a></p>
