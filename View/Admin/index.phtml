@@ -4,9 +4,8 @@
  */
 $user = $view->getParam('user');
 ?>
-<h1> Привет Админ : <?php echo $user->name; ?></h1>
-<h2>Теперь ты можешь исправить тут все))</h2>
-
+<h1> Вы зашли как : </h1>
+<?php echo $user->name; ?>
 
 <p><a href="/admin/product">Продукты</a></p>
 <p><a href="/admin/user">Пользователи</a></p>
