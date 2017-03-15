@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var Model_Admin_Product $product
+ */
+$product = $view->getParam('product');
+?>
+
+<?php if($product) :?>
+    <table border="2px">
+        <th>SKU</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Img</th>
+        <th>Price</th>
+        <th>Total</th>
+
+
+        <?php foreach ($product as $products) :?>
+            <tr>
+                <td><?php echo $products['SKU']; ?></td>
+                <td><?php echo $products['name']; ?></td>
+                <td><?php echo $products['description']; ?></td>
+                <td><?php echo $products['img']; ?></td>
+                <td><?php echo $products['price']; ?></td>
+                <td><?php echo $products['total']; ?></td>
+
+                <td ><?php echo "<a href=\"/admin/update\"><button>Редактировать</button></a>"?></td>
+                <td ><?php echo "<a href=\"/admin/del\"><button>Удалить</button></a>"?></td>
+            </tr>
+        <?php endforeach ?>
+    </table>
+
+<?php elseif($view->getParam('error')) : ?>
+    <div class="error"><?php echo $view->getParam('error')?></div>
+<?php endif; ?>

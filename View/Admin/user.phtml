@@ -1,0 +1,44 @@
+<?php
+/**
+ * @var Model_Admin_User $user
+ */
+$user = $view->getParam('user');
+$i = 1;
+?>
+
+<?php if($user) :?>
+    <table border="2px">
+        <th>Num</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
+        <th>password</th>
+        <th>is_active</th>
+        <th>skills</th>
+        <th>role_id</th>
+        <th>year</th>
+        <th>photo</th>
+
+        <?php foreach ($user as $users) :?>
+            <tr>
+
+                <td><?php echo $i; $i++?></td>
+                <td><?php echo $users['first_name']; ?></td>
+                <td><?php echo $users['last_name']; ?></td>
+                <td><?php echo $users['email']; ?></td>
+                <td><?php echo $users['password']; ?></td>
+                <td><?php echo $users['is_active']; ?></td>
+                <td><?php echo $users['skills']; ?></td>
+                <td><?php echo $users['role_id']; ?></td>
+                <td><?php echo $users['year']; ?></td>
+                <td><?php echo $users['photo']; ?></td>
+
+                <td ><?php echo "<a href=\"/admin/update\"><button>Редактировать</button></a>"?></td>
+                <td ><?php echo "<a href=\"/admin/del\"><button>Удалить</button></a>"?></td>
+            </tr>
+        <?php endforeach ?>
+    </table>
+
+<?php elseif($view->getParam('error')) : ?>
+    <div class="error"><?php echo $view->getParam('error')?></div>
+<?php endif; ?>
