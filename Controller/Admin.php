@@ -43,4 +43,16 @@ class Controller_Admin extends System_Controller
             $this->view->setParam('error', $e->getMessage());
         }
     }
+
+    public function userOrder()
+    {
+
+        try {
+            $modelOrder = Model_Admin_Order:: getAll();
+
+            $this->view->setParam('user', $modelOrder);
+        } catch (Exception $e) {
+            $this->view->setParam('error', $e->getMessage());
+        }
+    }
 }

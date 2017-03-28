@@ -4,10 +4,10 @@ error_reporting(E_ALL);
 define('DS', DIRECTORY_SEPARATOR); // вводим константу, содержащую разделитель пути, для Windows это «\»
 // Узнаём путь к файлам сайта
 $site_path = realpath(dirname(__FILE__) . DS) . DS; // realpath() - возвращает канонизированный абсолютный путь к файлу
-// C:\OpenServer\domains\rrr.com\
+// C:\OpenServer\domains\eshop.com\
 
 
-define('SITE_PATH', $site_path); // вводим константу: // C:\OpenServer\domains\rrr.com\
+define('SITE_PATH', $site_path); // вводим константу: // C:\OpenServer\domains\eshop.com\
 
 $config = file_get_contents(SITE_PATH . DS . 'config.xml'); // file_get_contents -- Получить содержимое файла в виде одной строки
 
