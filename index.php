@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+error_reporting(E_ALL); // будет выводить ошибки
 
 define('DS', DIRECTORY_SEPARATOR); // вводим константу, содержащую разделитель пути, для Windows это «\»
 // Узнаём путь к файлам сайта
